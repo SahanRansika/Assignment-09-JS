@@ -12,7 +12,7 @@
 
         }
         section{
-            top: 50px;
+            top: 340px;
             font-size: 40px;
             position: relative;
             display: flex;
@@ -24,9 +24,27 @@
             background-color: white;
             margin-right: 10px;
         }
+        .bord{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 45px;
+            border-top: 5px solid white;
+            border-bottom: 5px solid white;
+            position: absolute;
+            top: 225px;
+            right: 650px;
+        }
+        h1{
+            color: red;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
     </style>
 </head>
 <body>
+
 <section>
     <div></div>
     <div></div>
@@ -35,6 +53,9 @@
     <div></div>
     <div></div>
 </section>
+<div class="bord">
+    <h1>JAVA SCRIPT KNIGHT RIDER</h1>
+</div>
 <script>
     const lights = Array.from(document.querySelectorAll("section > div"));
     let currentIndex = 0;
