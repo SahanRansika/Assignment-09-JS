@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        body>h1:first-child{
+            font-size: 50px;
+
+        }
+        section{
+            top: 50px;
+            font-size: 40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        section>div{
+            width: 100px;
+            aspect-ratio: 1/0.5;
+            background-color: white;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+<script>
+    const lights = Array.from(document.querySelectorAll("section > div"));
+    let currentIndex = 0;
+    let direction = 1;
+
+    function animateKnightRider() {
+        lights.forEach(lights => {
+            lights.style.backgroundColor = "white";
+        });
+
+        for (let offset = -1; offset <= 1; offset++) {
+            const index = currentIndex + offset;
+            if (index >= 0 && index < lights.length) {
+                lights[index].style.backgroundColor = "red";
+            }
+        }
+
+
+        currentIndex += direction;
+
+        if (currentIndex >= lights.length - 1 || currentIndex <= 0) {
+            direction *= -1;
+        }
+    }
+
+    setInterval(animateKnightRider, 150);
+
+</script>
+</body>
+</html>
